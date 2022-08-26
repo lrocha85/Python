@@ -1,3 +1,6 @@
+##Primeiro exercício
+#print ("Day 1 - Python Print Function" + "\nThe function is declared like this:" + "\nprint('what to print')")
+
 ## Print com input e quebrando linha
 # a = input("What is your name: ")
 # b = input("Your age: ")
