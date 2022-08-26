@@ -13,8 +13,7 @@
 
 height = input("enter your height in m: ")
 weight = input("enter your weight in kg: ")
-p = int(weight)
-a = float(height)
-soma = p / a ** 2
-print (weight, "%", height, "x", height, "=", soma,"\n",int(soma) )
 
+imc = int(weight) / float(height) ** 2
+int_imc = int(imc)
+print (int_imc)
