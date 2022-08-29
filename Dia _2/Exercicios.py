@@ -48,14 +48,14 @@
 
 # Projeto final aula 2, calculadora de conta com gorjeta
 
-print ("Welcome to the tip calculator.")
-total_bill = input("What was the total bill? ")
-tip = input("What percentage tip would you like to give?10 , 12, or 15? ")
-people_number = input("How many people to split the bill? ")
+# print ("Welcome to the tip calculator.")
+# total_bill = input("What was the total bill? ")
+# tip = input("What percentage tip would you like to give?10 , 12, or 15? ")
+# people_number = input("How many people to split the bill? ")
 
-total_tip = float(total_bill) * int(tip) /100
-full_bill = float(total_bill) + float(total_tip)
-split_valor = full_bill / int(people_number)
-print (f"Each person should pay: {round(split_valor,2)}")
+# total_tip = float(total_bill) * int(tip) /100
+# full_bill = float(total_bill) + float(total_tip)
+# split_valor = full_bill / int(people_number)
+# print (f"Each person should pay: {round(split_valor,2)}")
 
 
