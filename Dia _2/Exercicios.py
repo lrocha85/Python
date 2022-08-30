@@ -58,4 +58,36 @@
 # split_valor = full_bill / int(people_number)
 # print (f"Each person should pay: {round(split_valor,2)}")
 
+## Projeto final do dia 3, calculadora do amor
 
+
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+true_word = "true" # armazenando as palavras
+love_word = "love"
+
+true_total = 0
+love_total = 0
+combine_names = name1 + name2 # juntando os 2 nomes
+combine_names_lower = combine_names.lower() # tirando as letras maiúsculas
+
+true_total += combine_names_lower.count('t') # contando quantas vezes a letra t aparece e adicionando o número de vezes na variável true_total
+true_total += combine_names_lower.count('r')
+true_total += combine_names_lower.count('u')
+true_total += combine_names_lower.count('e')
+
+love_total += combine_names_lower.count('l') # contando quantas vezes a letra l aparece e adicionando o número de vezes na variável love_total
+love_total += combine_names_lower.count('o')
+love_total += combine_names_lower.count('v')
+love_total += combine_names_lower.count('e')
+
+love_score = int(str(true_total) + str(love_total)) # convertendo em string o total das 2 palavras anteriores e armazenando na love_score sem somar
+
+if love_score < 10 or love_score > 90:
+    print (f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print (f"Your score is {love_score}, you are alright together.")
+else:
+    print (f"Your score is {love_score}.")
