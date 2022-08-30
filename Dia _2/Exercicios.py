@@ -58,7 +58,7 @@
 # split_valor = full_bill / int(people_number)
 # print (f"Each person should pay: {round(split_valor,2)}")
 
-## Projeto calculadora do amor
+# Projeto calculadora do amor
 
 
 # print("Welcome to the Love Calculator!")
