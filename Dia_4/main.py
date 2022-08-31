@@ -1,71 +1,71 @@
 ## Trabalhando com números randomicos - https://www.askpython.com/
-# import random
+import random
 
-# random_int = random.randint(1, 10)
-# print(random_int)
+random_int = random.randint(1, 10)
+print(random_int)
 
-# random.float = random.random()
+random.float = random.random()
 
-# print(random.float)
+print(random.float)
 
-# random.uni = random.uniform(1, 10)
+random.uni = random.uniform(1, 10)
 
-# print(random.uni)
-# import random
+print(random.uni)
+import random
 
-# test_seed = int(input("Create a seed number: "))
-# random.seed(test_seed)
+test_seed = int(input("Create a seed number: "))
+random.seed(test_seed)
 
-# number = random.randint(0, 1)
+number = random.randint(0, 1)
 
-# if number == 0:
-#     print("Tails")
-# else:
-#     print("Heads")
+if number == 0:
+    print("Tails")
+else:
+    print("Heads")
 
 ## Exercise 2 - Banker Roulette
 
-# import random
-# test_seed = int(input("Create a seed number: ")) # Apenas iniciando o seed
-# random.seed(test_seed)
+import random
+test_seed = int(input("Create a seed number: ")) # Apenas iniciando o seed
+random.seed(test_seed)
 
-# names_string = input("Give me everybody's names, separated by a ,. ")
-# names = names_string.split(", ") # A função split separa os nomes que passei e coloca na lista
+names_string = input("Give me everybody's names, separated by a ,. ")
+names = names_string.split(", ") # A função split separa os nomes que passei e coloca na lista
 
-# i = (len(names)) # Aqui estou contando quantos elementos tenho na minha lista
+i = (len(names)) # Aqui estou contando quantos elementos tenho na minha lista
 
-# num = random.randint(0, (i-1)) # Estou gerando um número randomico entre 0, primeiro item da lista, e i-1, q é o número total de elementos na lista -1 pq a lista começa com 0
+num = random.randint(0, (i-1)) # Estou gerando um número randomico entre 0, primeiro item da lista, e i-1, q é o número total de elementos na lista -1 pq a lista começa com 0
 
-# bucha = names[num] # Buscando um nome aleatório na lista
+bucha = names[num] # Buscando um nome aleatório na lista
 
-# print (f"{bucha} is going to buy the meal today!")
+print (f"{bucha} is going to buy the meal today!")
 
-# ## Trabalhando com lista dentro de lista
-# fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
-# vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+## Trabalhando com lista dentro de lista
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
  
-# dirty_dozen = [fruits, vegetables]
+dirty_dozen = [fruits, vegetables]
  
-# print(dirty_dozen[1])
-# print(dirty_dozen[0])
-# print(dirty_dozen[1][2])
-# print(dirty_dozen[0]+dirty_dozen[1])
+print(dirty_dozen[1])
+print(dirty_dozen[0])
+print(dirty_dozen[1][2])
+print(dirty_dozen[0]+dirty_dozen[1])
 
 ## Exercise 3 - Treasure Map
 
-# row1 = ["⬜️","️⬜️","️⬜️"]
-# row2 = ["⬜️","⬜️","️⬜️"]
-# row3 = ["⬜️️","⬜️️","⬜️️"]
-# map = [row1, row2, row3]
-# print(f"{row1}\n{row2}\n{row3}")
-# position = input("Where do you want to put the treasure? ")
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
 
-# h = int(position[0])
-# v = int(position[1])
+h = int(position[0])
+v = int(position[1])
 
-# map[v -1] [h -1] = "X"
+map[v -1] [h -1] = "X"
 
-# print(f"{row1}\n{row2}\n{row3}")
+print(f"{row1}\n{row2}\n{row3}")
 
 ## Projeto final do dia
 
