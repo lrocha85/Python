@@ -64,12 +64,12 @@ for l in range(1, nr_letters + 1): # de 1 até o número de letras escolhido aci
     lista += total_letters
 
 total_symbols = ""
-for s in range(1, nr_symbols +1): # de 1 até o número de símbolos escolhido acima, pego 1 símbolo aleatório na lista symbols e adiciono na variável lista.
+for s in range(1, nr_symbols + 1): # de 1 até o número de símbolos escolhido acima, pego 1 símbolo aleatório na lista symbols e adiciono na variável lista.
     total_symbols = random.choice(symbols)
     lista += total_symbols
 
 total_numbers = 0
-for n in range(1, nr_numbers +1 ): # de 1 até o número de números escolhidos acima, pego 1 número aleatório na lista numbers e adiciono na variável lista.
+for n in range(1, nr_numbers + 1 ): # de 1 até o número de números escolhidos acima, pego 1 número aleatório na lista numbers e adiciono na variável lista.
     total_numbers = random.choice(numbers)
     lista += total_numbers
 
