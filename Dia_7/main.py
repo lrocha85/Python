@@ -90,21 +90,23 @@ print (display)
 while not end_of_game:
     guess = input("What is the letter? ").lower()
 
-    for position in range(word_length):
-        letter = chosen_word[position]
-        if letter == guess:
-            display[position] = letter
-            print (life)
+    if guess not in chosen_word:
+        life -= 1
+        (f"stages{life}\n{display}")
         
-        if guess not in chosen_word:
-            life -= 1
-            if life == 0:
-                end_of_game = True
-                print (f"You lose! Life:{life}")   
-
-        if "_" not in display:
+        if life == 0:
             end_of_game = True
-            print ("You win!")
-    print (f"stages{life}\n{display}")
+            print ("You lose!")
+
+    else:
+        for position in range(word_length):
+            letter = chosen_word[position]
+            if letter == guess:
+                display[position] = letter
+
+    if "_" not in display:
+        end_of_game = True
+        print ("You win!")
+    print (f"{stages[life]}\n{display}")
 
     
