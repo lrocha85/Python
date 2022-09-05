@@ -14,8 +14,8 @@
 
 # Challenge 2
 import random
-from art import stages
-from art import logo
+from replit import clear
+from art import stages, logo
 from words import words
 
 print (logo)
@@ -37,6 +37,8 @@ print (display)
 while not end_of_game:
     guess = input("What is the letter? ").lower()
 
+    clear ()
+
     if guess not in chosen_word:
         life -= 1
         (f"stages{life}\n{display}")
@@ -55,6 +57,7 @@ while not end_of_game:
     if "_" not in display:
         end_of_game = True
         print ("You win!")
+        print (f"The word is: {chosen_word}")
     print (f"{stages[life]}\n{display}")
 
     
