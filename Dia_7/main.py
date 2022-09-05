@@ -12,7 +12,7 @@
 #     else:
 #         print("Wrong")
 
-# Challenge 2
+# Programa completo da forca
 import random
 from replit import clear # Essa função limpa a tela a cada execução, para evitar barra de rolagem
 from art import stages, logo
