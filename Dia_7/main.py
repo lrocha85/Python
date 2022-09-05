@@ -14,7 +14,7 @@
 
 # Challenge 2
 import random
-from replit import clear
+from replit import clear # Essa função limpa a tela a cada execução, para evitar barra de rolagem
 from art import stages, logo
 from words import words
 
