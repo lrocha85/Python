@@ -14,69 +14,16 @@
 
 # Challenge 2
 import random
+from art import stages
+from art import logo
+from words import words
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+print (logo)
 
 print (stages[6])
 
 end_of_game = False
-word_list = ["ardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
+chosen_word = random.choice(words)
 word_length = len(chosen_word)
 life = 6
 
@@ -97,6 +44,7 @@ while not end_of_game:
         if life == 0:
             end_of_game = True
             print ("You lose!")
+            print (f"The word is: {chosen_word}")
 
     else:
         for position in range(word_length):
