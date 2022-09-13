@@ -75,7 +75,7 @@ print (logo)
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-reload = ""
+reload = "yes"
 while reload == "yes":
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
@@ -97,7 +97,9 @@ while reload == "yes":
 
         print (f"Here's the {direction}d result: {final_text} ")
         reload= input("Type 'yes' if you want to go again. Otherwise type 'no': ")
-            
-    cesar(text, shift, direction)   
 
-print ("Goodbye")
+        if reload == "no":
+            print ("Goodbye")
+            reload = "no"
+
+cesar(text, shift, direction)   
