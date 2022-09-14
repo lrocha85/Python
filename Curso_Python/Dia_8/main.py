@@ -68,38 +68,41 @@
 
 ## Juntando as 2 funções acima em 1 só chamada cesar:
 
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+reload = ""
+end = False
+
+def cesar(text, shift, direction):
+    final_text = ""
+    if direction == "decode":
+        shift *= -1
+    for i in text:
+        if i in alphabet:
+            word = alphabet.index(i)
+            new_word = word + shift
+            final_text += alphabet[new_word]
+        else:
+            final_text += i
+    print (f"Here's the {direction}d result: {final_text} ")
+
 from operator import index
 from art import logo
 
 print (logo)
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-reload = "yes"
-while reload == "yes":
+while not end:
+    
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
 
     shift = shift % 26
 
-    def cesar(text, shift, direction):
-        final_text = ""
-        if direction == "decode":
-            shift *= -1
-        for i in text:
-            if i in alphabet:
-                word = alphabet.index(i)
-                new_word = word + shift
-                final_text += alphabet[new_word]
-            else:
-                final_text += i
+    cesar(text=text, shift=shift, direction=direction)
 
-        print (f"Here's the {direction}d result: {final_text} ")
-        reload= input("Type 'yes' if you want to go again. Otherwise type 'no': ")
+    reload = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")   
 
-        if reload == "no":
-            print ("Goodbye")
-            reload = "no"
-
-cesar(text, shift, direction)   
+    if reload == "no":
+        end = True
+        print("Goodbye")
