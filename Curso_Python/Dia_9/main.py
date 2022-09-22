@@ -50,3 +50,38 @@
 
 # add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
 # print(travel_log)
+
+# Final program class 9
+
+from replit import clear
+from art import logo
+
+fim_leilao = False
+
+highest= 0.0
+winner = ""
+
+print (logo)
+
+def leilao (name, price):
+    global highest # If i'm not add "global", It is return a error because the variable highest did not start on def.
+    global winner
+   
+    if price > highest:
+        winner = name
+        highest = price
+        
+  
+while fim_leilao == False:
+          
+    name = input("What is your name? ")
+    price = float(input("What is your bid price? "))
+
+    leilao(name, price)
+    
+    more_player = input("Are there more users who want to bid? yes or no ") 
+    if more_player == "no":
+        print(f"The Winner is {winner}, with the valor: {highest}")  
+        fim_leilao = True
+    clear
+
