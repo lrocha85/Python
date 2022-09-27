@@ -69,7 +69,7 @@ operations = {
 
 def calculadora():
  
-    num1 = int(input("What's the firt number?: "))
+    num1 = float(input("What's the firt number?: "))
 
     for item in operations:
         print(item)
@@ -78,11 +78,11 @@ def calculadora():
 
     operator= input("What operator do you want to do?: ")
 
-    num2 = int(input("What's the second number?: "))
+    num2 = float(input("What's the second number?: "))
 
     calculator = operations[operator]
 
-    answer = calculator(num1, num2)
+    answer = float(calculator(num1, num2))
 
     print (f"{num1} {operator} {num2}: {answer}")
 
@@ -96,9 +96,9 @@ def calculadora():
                 print(item)
 
             operator= input(f"What operator do you want to do with the number {answer}?: ")    
-            num3 = int(input("What's the next number?: "))
+            num3 = float(input("What's the next number?: "))
             calculator = operations[operator]
-            second_answer = int(calculator(answer, num3))
+            second_answer = float(calculator(answer, num3))
 
             print (f"{answer} {operator} {num3}: {second_answer}")
             answer = second_answer
