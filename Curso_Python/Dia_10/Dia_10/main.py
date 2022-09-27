@@ -40,55 +40,69 @@
 # days = days_in_month(year, month)
 # print(days)
 
-# # Calculator
+# Calculator
 
-# #Add
-# def add(n1,n2):
-#     return n1 + n2
+from replit import clear
 
-# #Sub
-# def sub(n1,n2):
-#     return n1 - n2
+#Add
+def add(n1,n2):
+    return n1 + n2
 
-# #Mult
-# def mult(n1,n2):
-#     return n1 * n2
+#Sub
+def sub(n1,n2):
+    return n1 - n2
 
-# #Div
-# def div(n1,n2):
-#     return n1 / n2
+#Mult
+def mult(n1,n2):
+    return n1 * n2
 
-# operations = {
-#     "+" : add,
-#     "-" : sub,
-#     "*" : mult,
-#     "/" : div
-# }
+#Div
+def div(n1,n2):
+    return n1 / n2
 
-# num1 = int(input("What's the firt number?: "))
+operations = {
+    "+" : add,
+    "-" : sub,
+    "*" : mult,
+    "/" : div
+}
 
-# for item in operations:
-#     print(item)
+def calculadora():
+ 
+    num1 = int(input("What's the firt number?: "))
 
-# operator= input("What operator do you want to do?: ")
+    for item in operations:
+        print(item)
 
-# num2 = int(input("What's the second number?: "))
+    loop = True
 
-# calculator = operations[operator]
+    operator= input("What operator do you want to do?: ")
 
-# answer = calculator(num1, num2)
+    num2 = int(input("What's the second number?: "))
 
-# print (f"{num1} {operator} {num2}: {answer}")
+    calculator = operations[operator]
 
-# question = input("Do you have another operation? yes or no: ")
+    answer = calculator(num1, num2)
 
-# if question == "yes":
-#     for item in operations:
-#         print(item)
+    print (f"{num1} {operator} {num2}: {answer}")
 
-#     operator= input("What operator do you want to do?: ")    
-#     num3 = int(input("What's the next number?: "))
-#     calculator = operations[operator]
-#     second_answer = calculator(answer, num3)
+    while loop is True:
 
-#     print (f"{answer} {operator} {num3}: {second_answer}")
+        question = input(f"Do you have another operation with the number {answer}? yes or no: ")
+
+        if question == "yes":
+            clear()
+            for item in operations:
+                print(item)
+
+            operator= input(f"What operator do you want to do with the number {answer}?: ")    
+            num3 = int(input("What's the next number?: "))
+            calculator = operations[operator]
+            second_answer = int(calculator(answer, num3))
+
+            print (f"{answer} {operator} {num3}: {second_answer}")
+            answer = second_answer
+        else:
+            loop = False
+            print("FIM")
+calculadora()
