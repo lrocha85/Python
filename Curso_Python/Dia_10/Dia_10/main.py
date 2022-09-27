@@ -40,55 +40,55 @@
 # days = days_in_month(year, month)
 # print(days)
 
-# Calculator
+# # Calculator
 
-#Add
-def add(n1,n2):
-    return n1 + n2
+# #Add
+# def add(n1,n2):
+#     return n1 + n2
 
-#Sub
-def sub(n1,n2):
-    return n1 - n2
+# #Sub
+# def sub(n1,n2):
+#     return n1 - n2
 
-#Mult
-def mult(n1,n2):
-    return n1 * n2
+# #Mult
+# def mult(n1,n2):
+#     return n1 * n2
 
-#Div
-def div(n1,n2):
-    return n1 / n2
+# #Div
+# def div(n1,n2):
+#     return n1 / n2
 
-operations = {
-    "+" : add,
-    "-" : sub,
-    "*" : mult,
-    "/" : div
-}
+# operations = {
+#     "+" : add,
+#     "-" : sub,
+#     "*" : mult,
+#     "/" : div
+# }
 
-num1 = int(input("What's the firt number?: "))
+# num1 = int(input("What's the firt number?: "))
 
-for item in operations:
-    print(item)
+# for item in operations:
+#     print(item)
 
-operator= input("What operator do you want to do?: ")
+# operator= input("What operator do you want to do?: ")
 
-num2 = int(input("What's the second number?: "))
+# num2 = int(input("What's the second number?: "))
 
-calculator = operations[operator]
+# calculator = operations[operator]
 
-answer = calculator(num1, num2)
+# answer = calculator(num1, num2)
 
-print (f"{num1} {operator} {num2}: {answer}")
+# print (f"{num1} {operator} {num2}: {answer}")
 
-question = input("Do you have another operation? yes or no: ")
+# question = input("Do you have another operation? yes or no: ")
 
-if question == "yes":
-    for item in operations:
-        print(item)
+# if question == "yes":
+#     for item in operations:
+#         print(item)
 
-    operator= input("What operator do you want to do?: ")    
-    num3 = int(input("What's the next number?: "))
-    calculator = operations[operator]
-    second_answer = calculator(answer, num3)
+#     operator= input("What operator do you want to do?: ")    
+#     num3 = int(input("What's the next number?: "))
+#     calculator = operations[operator]
+#     second_answer = calculator(answer, num3)
 
-    print (f"{answer} {operator} {num3}: {second_answer}")
+#     print (f"{answer} {operator} {num3}: {second_answer}")
