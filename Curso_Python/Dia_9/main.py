@@ -71,17 +71,15 @@ def leilao (name, price):
         winner = name
         highest = price
         
-  
-while fim_leilao == False:
-          
-    name = input("What is your name? ")
-    price = float(input("What is your bid price? "))
+           
+name = input("What is your name? ")
+price = float(input("What is your bid price? "))
 
-    leilao(name, price)
-    
-    more_player = input("Are there more users who want to bid? yes or no ") 
-    if more_player == "no":
-        print(f"The Winner is {winner}, with the valor: {highest}")  
-        fim_leilao = True
-    clear
+leilao(name, price)
+
+more_player = input("Are there more users who want to bid? yes or no ") 
+if more_player == "no":
+    print(f"The Winner is {winner}, with the valor: {highest}")  
+    fim_leilao = True
+clear
 

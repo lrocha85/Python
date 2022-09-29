@@ -42,67 +42,144 @@
 
 # Calculator
 
-from replit import clear
+# from replit import clear
 
-#Add
-def add(n1,n2):
-    return n1 + n2
+# #Add
+# def add(n1,n2):
+#     return n1 + n2
 
-#Sub
-def sub(n1,n2):
-    return n1 - n2
+# #Sub
+# def sub(n1,n2):
+#     return n1 - n2
 
-#Mult
-def mult(n1,n2):
-    return n1 * n2
+# #Mult
+# def mult(n1,n2):
+#     return n1 * n2
 
-#Div
-def div(n1,n2):
-    return n1 / n2
+# #Div
+# def div(n1,n2):
+#     return n1 / n2
 
-operations = {
-    "+" : add,
-    "-" : sub,
-    "*" : mult,
-    "/" : div
-}
+# operations = {
+#     "+" : add,
+#     "-" : sub,
+#     "*" : mult,
+#     "/" : div
+# }
 
-def calculadora():
+# def calculadora():
  
-    num1 = float(input("What's the firt number?: "))
+#     num1 = float(input("What's the firt number?: "))
 
-    for item in operations:
-        print(item)
+#     for item in operations:
+#         print(item)
 
-    loop = True
+#     loop = True
 
-    operator= input("What operator do you want to do?: ")
+#     operator= input("What operator do you want to do?: ")
 
-    num2 = float(input("What's the second number?: "))
+#     num2 = float(input("What's the second number?: "))
 
-    calculator = operations[operator]
+#     calculator = operations[operator]
 
-    answer = float(calculator(num1, num2))
+#     answer = float(calculator(num1, num2))
 
-    print (f"{num1} {operator} {num2}: {answer}")
+#     print (f"{num1} {operator} {num2}: {answer}")
 
-    while loop is True:
+#     while loop is True:
 
-        question = input(f"Do you have another operation with the number {answer}? yes or no: ")
+#         question = input(f"Do you have another operation with the number {answer}? yes or no: ")
 
-        if question == "yes":
-            clear()
-            for item in operations:
-                print(item)
+#         if question == "yes":
+#             clear()
+#             for item in operations:
+#                 print(item)
 
-            operator= input(f"What operator do you want to do with the number {answer}?: ")    
-            num3 = float(input("What's the next number?: "))
-            calculator = operations[operator]
-            second_answer = float(calculator(answer, num3))
+#             operator= input(f"What operator do you want to do with the number {answer}?: ")    
+#             num3 = float(input("What's the next number?: "))
+#             calculator = operations[operator]
+#             second_answer = float(calculator(answer, num3))
 
-            print (f"{answer} {operator} {num3}: {second_answer}")
-            answer = second_answer
-        else:
-            loop = False
-            print("FIM")
-calculadora()
+#             print (f"{answer} {operator} {num3}: {second_answer}")
+#             answer = second_answer
+#         else:
+#             loop = False
+#             print("FIM")
+# calculadora()
+
+## Projeto final da aula, o jogo 21
+
+############### Blackjack Project #####################
+
+#Difficulty Normal 😎: Use all Hints below to complete the project.
+#Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
+#Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
+#Difficulty Expert 🤯: Only use Hint 1 to complete the project.
+
+############### Our Blackjack House Rules #####################
+
+## The deck is unlimited in size. 
+## There are no jokers. 
+## The Jack/Queen/King all count as 10.
+## The the Ace can count as 11 or 1.
+## Use the following list as the deck of cards:
+## cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+## The cards in the list have equal probability of being drawn.
+## Cards are not removed from the deck as they are drawn.
+## The computer is the dealer.
+
+##################### Hints #####################
+import random
+
+endgame = False
+
+def deal_card():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    return (card)
+
+def calculate_score(cards):
+    num_len = len(cards)
+    num = 0
+    sum = 0 
+    
+    for num in (cards):     
+        sum += num
+    return sum
+
+def print():
+    print(f"User Cards: {user_cards}, Total User Score: {user_score} ")
+    print(f"Computer Cards: {computer_cards}, Total Computer Store: {computer_score}")
+
+user_cards = []
+computer_cards = []
+
+for _ in range(2):   
+    new_user_cards = deal_card()
+    user_cards.append(new_user_cards)
+    new_computer_cards = deal_card()
+    computer_cards.append(new_computer_cards)
+
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
+
+print()
+
+if computer_score == 21:
+    endgame = True
+    print ("Computer has blackjack")
+if user_score == 21:
+   endgame = True
+   print ("User has blackjack")
+
+while endgame is False:
+
+    draw_card = input("Do you want to draw another card? y or n: ")
+
+    if draw_card == "y":
+        computer_new = deal_card()
+        computer_cards.append(computer_new)
+        user_new = deal_card()
+        user_cards.append(user_new)
+
+print()
