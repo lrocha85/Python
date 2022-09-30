@@ -130,56 +130,94 @@
 
 ##################### Hints #####################
 import random
+from replit import clear
 
 endgame = False
 
-def deal_card():
-    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-    card = random.choice(cards)
-    return (card)
+while endgame == False:
+    def deal_card():
+        cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+        card = random.choice(cards)
+        return (card)
 
-def calculate_score(cards):
-    num_len = len(cards)
-    num = 0
-    sum = 0 
-    
-    for num in (cards):     
-        sum += num
-    return sum
+    def calculate_score(cards):
+        num_len = len(cards)
+        num = 0
+        sum = 0 
+        
+        for num in (cards):     
+            sum += num
+        return sum
 
-def print():
+    def get_print(): # <- define a função print(void) void pq não recebe argumento
+        print(f"User Cards: {user_cards}, Total User Score: {user_score} ") # <- chama a função print passando argumento
+        print(f"Computer Cards: {computer_cards}, Total Computer Store: {computer_score}")
+
+    user_cards = []
+    computer_cards = []
+
+    for _ in range(2):   
+        new_user_cards = deal_card()
+        user_cards.append(new_user_cards)
+        new_computer_cards = deal_card()
+        computer_cards.append(new_computer_cards)
+
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+
     print(f"User Cards: {user_cards}, Total User Score: {user_score} ")
-    print(f"Computer Cards: {computer_cards}, Total Computer Store: {computer_score}")
 
-user_cards = []
-computer_cards = []
+    if computer_score == 21:
+        endgame = True
+        print ("Computer has blackjack")
+    if user_score == 21:
+        endgame = True
+        get_print()
+        print ("User has blackjack")
 
-for _ in range(2):   
-    new_user_cards = deal_card()
-    user_cards.append(new_user_cards)
-    new_computer_cards = deal_card()
-    computer_cards.append(new_computer_cards)
+    while endgame is False:
 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
+        draw_card = input("Do you want to draw another card? y or n: ")
 
-print()
+        if draw_card == "y":
+            user_new = deal_card()
+            if user_new == 11:
+                if user_new + user_score >21:
+                    user_new = 1
+            user_cards.append(user_new)            
+            user_score = calculate_score(user_cards)            
+            print(f"User Cards: {user_cards}, Total User Score: {user_score} ")
+            if user_score >21:
+                endgame = True
+                print ("User Loss")
+        if draw_card == "n":
+            while computer_score <17:            
+             computer_new = deal_card()
+             computer_cards.append(computer_new)
+             computer_score = calculate_score(computer_cards)
+            if computer_score >21:
+                endgame = True
+                get_print()
+                print ("User Win")
+            else:
+                if user_score == computer_score:
+                    endgame = True
+                    get_print()
+                    print ("The game is Draw")
+                if user_score > computer_score:
+                    endgame = True
+                    get_print()
+                    print ("User Win")
+                if computer_score > user_score:
+                    endgame = True
+                    get_print()
+                    print ("User Loss")
 
-if computer_score == 21:
-    endgame = True
-    print ("Computer has blackjack")
-if user_score == 21:
-   endgame = True
-   print ("User has blackjack")
+    again = input("Do you want play again? y or n: ")
 
-while endgame is False:
-
-    draw_card = input("Do you want to draw another card? y or n: ")
-
-    if draw_card == "y":
-        computer_new = deal_card()
-        computer_cards.append(computer_new)
-        user_new = deal_card()
-        user_cards.append(user_new)
-
-print()
+    if again == "y":
+        clear()
+        endgame = False 
+    
+clear()
+print("End Game")
